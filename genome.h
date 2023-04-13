@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "dna_utils.h"
 using namespace std;
 class Genome {
     string rna;
@@ -11,11 +12,11 @@ public:
     Genome();
     Genome(string rna, pair<string, string> dna);
     void receiveContent(string rna, pair<string, string> dna);
-    void createDnaFromRna();
+    void createDNAFromRNA();
     void subtleMutation(char n1, char n2, int n);
     void bigMutation(string s1, string s2);
     void reverseMutation(string s1);
-    virtual void display() ;
+    void display() ;
     string getRna();
     pair<string, string> getDna();
 
