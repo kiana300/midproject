@@ -27,13 +27,10 @@ void Genome::receiveContent(string rna,pair<string, string> dna) {
 }
 
 /*
- *This method generates the DNA content from the RNA content of the Genome
- *object. It first converts the RNA string to a DNA string by replacing 'U' with
- *'T', then generates the complementary DNA strand. The method then sets the dna
- *field with the DNA strands as a pair of strings and prints the DNA.
+ *This method make dna_complement by use a complement function,
+ * then show this string instead of dna.second.
 */
-void Genome::createDnaFromRna() {
-  // Generate the complementary DNA 
+void Genome::createDNAFromRNA() {
   string dna_complement;
   for (int i=0; i<rna.size(); i++) {
     dna_complement += complement(rna[i]);
@@ -71,7 +68,7 @@ void Genome::subtleMutation(char n1, char n2, int n) {
             count++;
     }
   }
-    cout<<dna.first<<", "<<dna.second;
+    cout<<dna.first<<", "<<dna.second<<endl;
 }
 
 /*
@@ -150,7 +147,7 @@ void Genome::reverseMutation(string s1) {
             dna.first.replace(cou1,s1.size(),s1Reversed);
             dna.second.replace(cou1,s1.size(),s1ComplementReversed);
             ans = true;
-            cout << dna.first <<", "<< dna.second;
+            cout << dna.first <<", "<< dna.second<<endl;
             break;
          }
         a = "";
@@ -161,7 +158,7 @@ void Genome::reverseMutation(string s1) {
             dna.second.replace(cou1,s1.size(),s1Reversed);
             dna.first.replace(cou1,s1.size(),s1ComplementReversed);
             ans = true;
-            cout << dna.first <<", "<< dna.second;
+            cout << dna.first <<", "<< dna.second<<endl;
             break;
         }
     }
